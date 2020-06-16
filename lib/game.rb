@@ -64,13 +64,13 @@ class Game
         return "X"
       elsif (@board.cells[win_combo[0]]) == "O" && (@board.cells[win_combo[1]]) == "O" && (@board.cells[win_combo[2]]) == "O"
         return "O"
-          binding.pry
       else
 
     end
 
    end
      puts "Cat's Game!"
+       binding.pry
   end
 
   def turn
