@@ -1,6 +1,6 @@
 #require 'pry'
 class Game
-  attr_accessor :board, :player_1, :player_2, :user_input
+  attr_accessor :board, :player_1, :player_2
 
   WIN_COMBINATIONS = [
   [0, 1, 2],
@@ -74,7 +74,9 @@ class Game
 
   def turn
   puts "Please enter 1-9:"
-  user_input = gets.strip
+  
+  input = gets.strip
+  @board.valid_move?(input) == true
   index = user_input.to_i - 1
   if  valid_move?(index)
     player_token = current_player
