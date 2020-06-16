@@ -51,12 +51,12 @@ class Game
     WIN_COMBINATIONS.detect do |win_combo|
       @board.cells[win_combo[0]] == @board.cells[win_combo[1]] &&
       @board.cells[win_combo[1]] == @board.cells[win_combo[2]]
-        binding.pry
     end
   end
 
   def draw?
   @board.full? && !won?
+    binding.pry
   end
 
   def winner
