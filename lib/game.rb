@@ -56,7 +56,6 @@ class Game
 
   def draw?
   @board.full? && !won?
-    binding.pry
   end
 
   def winner
@@ -65,6 +64,7 @@ class Game
         return "X"
       elsif (@board.cells[win_combo[0]]) == "O" && (@board.cells[win_combo[1]]) == "O" && (@board.cells[win_combo[2]]) == "O"
         return "O"
+          binding.pry
       else
         puts "Cat's Game!"
     end
