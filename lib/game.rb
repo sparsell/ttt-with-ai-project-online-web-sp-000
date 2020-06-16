@@ -68,8 +68,9 @@ class Game
       else
 
     end
-      puts "Cat's Game!"
+
    end
+     puts "Cat's Game!"
   end
 
   def turn
