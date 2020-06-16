@@ -67,9 +67,7 @@ class Game
       else
         puts "Cat's Game!"
     end
-
    end
-  
        binding.pry
   end
 
