@@ -40,11 +40,12 @@ class Game
 
   def current_player
     @board.turn_count % 2 == 0 ? player_1 : player_2
-    binding.pry
+
   end
 
   def over?
     won? || draw?
+    binding.pry
   end
 
   def won?
