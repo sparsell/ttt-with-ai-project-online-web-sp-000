@@ -19,25 +19,6 @@ class Game
     @player_2 = player_2
   end
 
-  def start
-  #   puts "Hello player!"
-  #
-  #   puts "What kind of game do you want to play?"
-  #   puts "You can: "
-  #   puts "- watch the computer play"
-  #   puts "- play against the computer"
-  #   puts "or simply play with someone else"
-  #   puts "Which player should play 'X' first?"
-  #
-  #
-  #   puts "Would you like to play again?"
-  #
-  #
-  #
-  #   puts "Good-bye!"
-  #
-  end
-
   def current_player
     @board.turn_count % 2 == 0 ? player_1 : player_2
 
@@ -73,9 +54,9 @@ class Game
   end
 
   def turn
-  puts "Please enter 1-9:"
-
-  input = gets.strip
+  puts "Please enter a number 1-9:"
+  input = current_player.move(@board)
+  binding.pry
   @board.valid_move?(input) == true
   index = user_input.to_i - 1
   if  valid_move?(index)
