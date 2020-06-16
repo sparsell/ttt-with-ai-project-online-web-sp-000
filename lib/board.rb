@@ -30,7 +30,6 @@ class Board
   def turn_count #returns amount of turns based on cell value
     num_turns = 0
     cells.each do |played|
-
       if played == "X" || played == "O"
     num_turns += 1
       end
