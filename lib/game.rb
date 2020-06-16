@@ -19,7 +19,7 @@ class Game
     @player_2 = player_2
   end
 
-  # def start
+  def start
   #   puts "Hello player!"
   #
   #   puts "What kind of game do you want to play?"
@@ -36,7 +36,7 @@ class Game
   #
   #   puts "Good-bye!"
   #
-  # end
+  end
 
   def current_player
     @board.turn_count % 2 == 0 ? player_1 : player_2
