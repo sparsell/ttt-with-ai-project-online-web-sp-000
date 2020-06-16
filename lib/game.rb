@@ -1,4 +1,4 @@
-#require 'pry'
+require 'pry'
 class Game
   attr_accessor :board, :player_1, :player_2, :user_input
 
@@ -40,6 +40,7 @@ class Game
 
   def current_player
     @board.turn_count % 2 == 0 ? player_1 : player_2
+    binding.pry
   end
 
   def over?
@@ -71,7 +72,7 @@ class Game
 
   def turn
   puts "Please enter 1-9:"
-  @user_input = gets.strip
+  user_input = gets.strip
   index = user_input.to_i - 1
   if  valid_move?(index)
     player_token = current_player
