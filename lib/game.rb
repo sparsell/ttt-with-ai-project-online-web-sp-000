@@ -56,7 +56,7 @@ class Game
   def turn
   puts "Please enter a number 1-9:"
   input = current_player.move(@board)
-  binding.pry
+  #binding.pry
   @board.valid_move?(input) == true
   index = user_input.to_i - 1
   if  valid_move?(index)
