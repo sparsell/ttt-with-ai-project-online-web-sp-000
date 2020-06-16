@@ -1,4 +1,4 @@
-require 'pry'
+#require 'pry'
 class Game
   attr_accessor :board, :player_1, :player_2, :user_input
 
@@ -69,7 +69,7 @@ class Game
     end
    end
     puts "Cat's Game!"
-       binding.pry
+
   end
 
   def turn
