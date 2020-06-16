@@ -66,8 +66,9 @@ class Game
         return "O"
           binding.pry
       else
-        puts "Cat's Game!"
+
     end
+      puts "Cat's Game!"
    end
   end
 
