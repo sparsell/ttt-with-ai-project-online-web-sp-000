@@ -58,7 +58,6 @@ class Game
   input = current_player.move(@board)
   #binding.pry
   @board.valid_move?(input) == true
-  index = user_input.to_i - 1
   if  valid_move?(index)
     player_token = current_player
     move(index, player_token)
