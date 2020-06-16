@@ -74,7 +74,7 @@ class Game
 
   def turn
   puts "Please enter 1-9:"
-  
+
   input = gets.strip
   @board.valid_move?(input) == true
   index = user_input.to_i - 1
