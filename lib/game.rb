@@ -70,20 +70,26 @@ class Game
   end
 
   def turn
-  puts "Please enter 1-9:"
-  user_input = gets.strip
-  index = input_to_index(user_input)
-  if  valid_move?(index)
-    player_token = current_player
-    move(index, player_token)
-    display_board
-  else
-    turn
-  end
+    input = current_player.move(input)
+    if  !@board.valid_move?(input)
+      puts "That's not a valid move. Please enter a number from 1-9:"
+      turn
+    else
+      @board.update(input, current_player)
+      @board.display
+    end
 end
 
   def play
-
+  until over?
+    turn
   end
+
+  if won?
+    puts "Congratulations #{winner}!"
+  elsif draw?
+    puts "Cat's Game!"
+  end
+end
 
 end
