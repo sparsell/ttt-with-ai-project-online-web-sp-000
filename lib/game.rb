@@ -45,7 +45,8 @@ class Game
   def won?
     WIN_COMBINATIONS.detect do |win_combo|
       @board.cells[win_combo[0]] == @board.cells[win_combo[1]] &&
-      @board.cells[win_combo[1]] == @board.cells[win_combo[2]]
+      @board.cells[win_combo[1]] == @board.cells[win_combo[2]]  &&
+      @board.cells[win_combo[0]] != " "
     end
   end
 
@@ -54,19 +55,23 @@ class Game
   end
 
   def over?
-    !won? || !draw?
+    won? || draw?
   end
 
   def winner
+    if draw? == true; nil;
+    else
     WIN_COMBINATIONS.detect do |win_combo|
       if (@board.cells[win_combo[0]]) == "X" && (@board.cells[win_combo[1]]) == "X" && (@board.cells[win_combo[2]]) == "X"
         return "X"
       elsif (@board.cells[win_combo[0]]) == "O" && (@board.cells[win_combo[1]]) == "O" && (@board.cells[win_combo[2]]) == "O"
         return "O"
+      # else
+      #   puts "Cat's Game!"
       else
-        puts "Cat's Game!"
+        end
+      end
     end
-   end
   end
 
   def turn
@@ -81,14 +86,14 @@ class Game
 end
 
   def play
-      while !over?
+      until over?
         turn
       end
         if draw?
           puts "Cat's Game!"
         elsif won?
           puts "Congratulations #{winner}!"
-      end
+        end
   end
 
 end
