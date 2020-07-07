@@ -1,4 +1,4 @@
-#require 'pry'
+require 'pry'
 class Game
   attr_accessor :board, :player_1, :player_2
 
@@ -42,10 +42,6 @@ class Game
     @board.turn_count % 2 == 0 ? player_1 : player_2
   end
 
-  def over?
-    won? || draw?
-  end
-
   def won?
     WIN_COMBINATIONS.detect do |win_combo|
       @board.cells[win_combo[0]] == @board.cells[win_combo[1]] &&
@@ -55,6 +51,10 @@ class Game
 
   def draw?
   @board.full? && !won?
+  end
+
+  def over?
+    won? || draw?
   end
 
   def winner
@@ -81,15 +81,15 @@ class Game
 end
 
   def play
-  until over?
-    turn
+      while !over?
+        turn
+      end
+        if draw?
+          puts "Cat's Game!"
+        else won?
+          puts "Congratulations #{winner}!"
+      #binding.pry
+        end
   end
-
-  if won?
-    puts "Congratulations #{winner}!"
-  elsif draw?
-    puts "Cat's Game!"
-  end
-end
 
 end

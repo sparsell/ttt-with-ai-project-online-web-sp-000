@@ -40,13 +40,10 @@ class Board
 
   def taken?(input) #returns true if the position is X or O
     position(input) == "X" || position(input) == "O"
-
   end
 
   def valid_move?(input) #returns true for user input between 1-9 that is not taken
     !taken?(input) && input.to_i.between?(1, 9)
-
-
   end
 
   def update(input, player)
