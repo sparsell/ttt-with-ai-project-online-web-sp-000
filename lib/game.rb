@@ -74,7 +74,7 @@ class Game
     if  !@board.valid_move?(input)
       puts "That's not a valid move. Please enter a number from 1-9:"
       turn
-    else
+    elsif
       @board.update(input, current_player)
       @board.display
     end
@@ -86,10 +86,9 @@ end
       end
         if draw?
           puts "Cat's Game!"
-        else won?
+        elsif won?
           puts "Congratulations #{winner}!"
-      #binding.pry
-        end
+      end
   end
 
 end
