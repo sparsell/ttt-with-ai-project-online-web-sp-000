@@ -21,6 +21,7 @@ class Game
 
   def start
   
+    puts ""
     puts "What kind of tictactoe game do you want to play?"
     puts ""
     puts "You can: "
@@ -35,7 +36,7 @@ class Game
 
       if input == 1
         #two human players
-        puts Board::new
+        puts Board::display
         puts "The first player to move is 'X'"
         puts "Enter your first move, 1-9:"
         play
@@ -110,9 +111,9 @@ end
         elsif won?
           puts "Congratulations #{winner}!"
         end
-        puts ""
-        puts "Do you want to play again?"
-        start
+        # puts ""
+        # puts "Do you want to play again?"
+        # start
   end
 
 end
