@@ -17,41 +17,7 @@ class Game
     @board = board
     @player_1 = player_1
     @player_2 = player_2
-  end
-
-  def start
-  
-    puts ""
-    puts "What kind of tictactoe game do you want to play?"
-    puts ""
-    puts "You can: "
-    puts ""
-    puts "1. - play with someone else"
-    puts "2. - play against the computer"
-    puts "3. - watch the computer play"
-    puts "4. - exit the game"
-    puts ""
-    puts "Please enter a number from 1 - 4"
-      input = gets.to_i
-
-      if input == 1
-        #two human players
-        puts Board::display
-        puts "The first player to move is 'X'"
-        puts "Enter your first move, 1-9:"
-        play
-      elsif input == 2
-        #one human player against computer
-      elsif input == 3
-        #watch computer play
-      else
-        puts "Goodbye!"
-      end
-
-    # puts "Which player should play 'X' first?"
-    
-    # puts "Would you like to play again?"
-
+    @board.display
   end
 
   def current_player
@@ -110,10 +76,10 @@ end
           puts ""
         elsif won?
           puts "Congratulations #{winner}!"
+          puts ""
+          puts "Let's play again!"
         end
-        # puts ""
-        # puts "Do you want to play again?"
-        # start
+        #start
   end
 
 end
