@@ -4,23 +4,23 @@ module Players
     #accepts a board and returns the move in the form of a 1-9 string
     def move(board)
       # binding.pry
-      if board[4] == " "
+      if boardcells[4] == " "
         "5"
-      elsif board[0] == " "
+      elsif boardcells[0] == " "
         "1"
-      elsif board[6] == " "
+      elsif boardcells[6] == " "
         "7"
-      elsif board[2] == " "
+      elsif boardcells[2] == " "
         "3"
-      elsif board[8] == " "
+      elsif boardcells[8] == " "
         "9"
-      elsif board[1] == " "
+      elsif boardcells[1] == " "
         "2"
-      elsif board[5] == " "
+      elsif boardcells[5] == " "
         "6"
-      elsif board[3] == " "
+      elsif boardcells[3] == " "
         "4"
-      elsif board[7] == " "
+      elsif boardcells[7] == " "
         "8"
       end
       # computer_move = nil
