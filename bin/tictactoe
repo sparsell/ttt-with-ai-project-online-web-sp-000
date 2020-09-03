@@ -25,6 +25,7 @@ def start
       elsif game_option == 2 #one human player against computer
         puts "You can start with the token 'X'"
         Game.new(Players::Human.new("X"), Players::Computer.new("O"), Board.new).play
+        binding.pry
 
       elsif game_option == 3 #watch computer play
         Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play

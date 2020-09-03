@@ -57,7 +57,7 @@ class Game
   end
 
   def turn
-    input = current_player.move(input)
+    input = current_player.move(board)
     if  !@board.valid_move?(input)
       puts "That's not a valid move. Please enter a number from 1-9:"
       turn
