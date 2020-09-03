@@ -31,10 +31,6 @@ def start
       else
         puts "Goodbye!"
       end
-
-    
-    # puts "Here are youre menu options:"
-    #   start
   end
 
 
